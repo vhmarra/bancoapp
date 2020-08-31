@@ -19,7 +19,7 @@ public class Emprestimo implements Serializable {
 	private double valor_emprestimo;
 	
 	@ManyToOne
-	@JoinColumn(name = "cpf")
+	@JoinColumn(name = "clienteid")
 	private Cliente cliente;
 
 
@@ -33,7 +33,7 @@ public class Emprestimo implements Serializable {
 
 	//GETERS E SETERS
 	public Cliente getCpf() {
-		return getCpf() ;
+		return cliente ;
 	}
 	public void setCpf(Cliente cliente) {
 		this.cliente = cliente;

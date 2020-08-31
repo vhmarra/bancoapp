@@ -16,16 +16,9 @@ public class EmprestimoService {
         this.emprestimoRepository = emprestimoRepository;
     }
     
-    //SE CLIENTE ESTA LOGADO SALVA EMPRESTIMO
-    public Emprestimo save(EmprestimoRequest solicitarEmprestimo, Cliente cliente) throws Exception {
+    //salva emprestimo
+    public Emprestimo save(EmprestimoRequest solicitarEmprestimo, Cliente cliente){
         Emprestimo emprestimo = new Emprestimo(solicitarEmprestimo.getValor_emprestimo(),cliente);
-        if (cliente.getLogado().equals("true")) {
         	return emprestimoRepository.save(emprestimo);
-        } 
-        else {
-        	throw new Exception("Cliente nao esta logado");
-        }
-		 
-
     }
 }
